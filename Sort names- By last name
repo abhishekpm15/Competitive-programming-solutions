@@ -1,0 +1,62 @@
+N persons first name and last name are passed as input. The program must sort them on the last name.
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<string.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf("%d",&N);
+
+char str[N][100];
+
+char str2[N][100];
+
+for(int i=0;i<N;i++){
+
+    scanf("%s %s",str[i],str2[i]);
+
+}
+
+char temp1[100];
+
+char temp2[100];
+
+for(int i=0;i<N;i++){
+
+    for(int j=i+1;j<N;j++){
+
+        if(strcmp(str2[i],str2[j])>0){
+
+            strcpy(temp1,str[i]);
+
+            strcpy(temp2,str2[i]);
+
+            strcpy(str[i],str[j]);
+
+            strcpy(str2[i],str2[j]);
+
+            strcpy(str[j],temp1);
+
+            strcpy(str2[j],temp2);
+
+        }
+
+    }
+
+    printf("%s %s\n",str[i],str2[i]);
+
+}
+
+}
