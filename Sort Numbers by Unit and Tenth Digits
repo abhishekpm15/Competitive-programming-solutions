@@ -1,0 +1,73 @@
+Given N positive integers, the program must sort the numbers based on their unit digits(Smaller to larger). If the unit digits are same, then consider tenth digit to sort. Assume no two numbers will have both unit and tenth digits equal.
+
+
+Input:
+
+9
+
+12 223 10 4345 189 9 455 61 82
+
+
+Output:
+
+10 61 12 82 223 4345 455 9 189
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf("%d", &N);
+
+int array[N];
+
+for(int i = 0 ; i < N ; i++){
+
+    scanf("%d", &array[i] );
+
+}
+
+
+for(int i = 0 ; i < N ; i++){
+
+    for(int j = i + 1 ; j<N ; j++){
+
+        int temp1  =  array[i] % 10 ;
+
+        int temp2  =  array[j] % 10 ;
+
+        if(temp1 == temp2){
+
+            temp1  = (array[i] % 100)/10;
+
+            temp2  = (array[j] % 100)/10;
+
+        }
+
+        if( temp1 > temp2 ){
+
+            int flag  =  array[i];
+
+            array[i] =  array[j];
+
+            array[j] =  flag;
+
+        }
+
+    }
+
+    printf("%d ", array[i]);
+
+}
+
+}
