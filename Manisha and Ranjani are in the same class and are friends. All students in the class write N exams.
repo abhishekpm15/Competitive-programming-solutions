@@ -1,0 +1,88 @@
+Input format:
+
+The first line will contain N.
+
+The second line contains scores obtained by Manisha in N exams separated by space.
+
+
+Input: 
+
+5
+
+2 2 2 2 2
+
+3 3 3 3 3
+
+
+output: 
+
+5
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int main ()
+
+{
+
+int N;
+
+int sum=0;
+
+scanf("%d",&N);
+
+int array[N], array2[N];
+
+for (int i=0; i<N; i++){
+
+  scanf("%d",&array[i]);
+
+}
+
+for (int j=0; j<N; j++){
+
+scanf("%d",&array2[j]);
+
+}
+
+for(int i=0;i<N;i++){
+
+  for(int j=i+1;j<N;j++){
+
+      if(array[i]<array[j]){
+
+           int temp=array[i];
+
+           array[i]=array[j];
+
+           array[j]=temp;
+
+      }
+
+       if(array2[i]<array2[j]){
+
+           int temp2=array2[i];
+
+           array2[i]=array[j];
+
+           array2[j]=temp2;
+
+      }
+
+}
+
+}
+
+for(int i=0;i<N;i++){
+
+sum+=abs(array[i]-array2[i]);
+
+}
+
+printf("%d",sum);
+
+return 0;
+
+}
