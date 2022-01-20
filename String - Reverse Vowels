@@ -1,0 +1,83 @@
+Given a string S, reverse only the vowels in the string S and print the resultant string R as the output. The consonants must maintain their original locations in S.
+
+
+Input:
+
+idea
+
+
+Output:
+
+adei
+
+
+Input:
+
+hello
+
+
+Output:
+
+holle
+
+
+CODE:
+
+
+#include <stdio.h>
+
+#include <string.h>
+
+
+int main()
+
+{
+
+    char str[100];
+
+    scanf("%s" ,str);
+
+    int i=0;
+
+    int len=strlen(str) - 1;
+
+    while( i < len ){
+
+        if( str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' ){
+
+           if( str[len] == 'a' || str[len] == 'e' || str[len] == 'i' || str[len] == 'o' || str[len] == 'u') {
+
+                 char temp=str[i];
+
+                 str[i]=str[len];
+
+                 str[len]=temp;
+
+                i++;
+
+                len--;
+
+            }
+
+            else{
+
+                len--;
+
+            }
+
+        }
+
+        else{
+
+            i++;
+
+        }
+
+    }
+
+    printf("%s" , str);
+
+
+    return 0;
+
+}
