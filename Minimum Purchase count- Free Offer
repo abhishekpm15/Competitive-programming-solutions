@@ -1,0 +1,66 @@
+A shop sells N items. Due to a festival, a customer...
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int num;
+
+scanf("%d",&num);
+
+int array[num];
+
+for(int i=0;i<num;i++){
+
+    scanf("%d",&array[i]);
+
+}
+
+
+for(int i=0;i<num;i++){
+
+    for(int j=i+1;j<num;j++){
+
+        if(array[i]>array[j]){
+
+            int temp1=array[i];
+
+            array[i]=array[j];
+
+            array[j]=temp1;
+
+        }
+
+    }
+
+}
+
+int temp;
+
+int flag=1;
+
+temp=array[0];
+
+for(int i=0;i<num;i++)
+
+{
+
+           if(array[i]>temp+4){
+
+            flag++;
+
+            temp=array[i];
+
+        }
+
+    }
+
+printf("%d",flag);
+
+}
