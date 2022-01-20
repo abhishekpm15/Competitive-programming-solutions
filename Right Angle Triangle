@@ -1,0 +1,66 @@
+The length of the three sides of a triangle A,B and C are passed as the input. The program must check if it's a right angled triangle. Print YES or NO based on the check.
+
+
+Input:
+
+5
+
+4
+
+3
+
+
+Output:
+
+YES
+
+
+Input:
+
+11
+
+6
+
+9
+
+
+Output:
+
+NO
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int S1, S2, S3;
+
+scanf("%d %d %d", &S1, &S2, &S3);
+
+int a = S1*S1;
+
+int b = S2*S2;
+
+int c = S3*S3;
+
+if ( ( a == b+c )|| ( b == a+c ) || ( c == a+b ) ){
+
+    printf("YES");
+
+}
+
+else{
+
+    printf("NO");
+
+}
+
+}
