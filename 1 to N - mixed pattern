@@ -1,0 +1,42 @@
+The program must accept a number N and print the numbers from 1 to N with the first number being 1, second number being N, third being 2 and fourth being N-1 and so on.
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf("%d",&N);
+
+int last=N;
+
+int i=1;
+
+int count=0;
+
+while(count<N){
+
+    printf("%d ",i++);
+
+    count++;
+
+    if(count<N){
+
+    printf("%d ",last--);
+
+    count++;
+
+    }
+
+}
+
+}
