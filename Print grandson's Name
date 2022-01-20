@@ -1,0 +1,86 @@
+The  program must accpet first and last name of three persons who are in the family tree and print the grandson's name.
+
+
+Input :
+
+Arun Kumar
+
+Swamy Nathan
+
+Kumar Swamy
+
+
+Output :
+
+Arun Kumar
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<string.h>
+
+
+int main()
+
+{
+
+char aa[100];
+
+char bb[100];
+
+char cc[100];
+
+char dd[100];
+
+char ee[100];
+
+char ff[100];
+
+scanf("%s %s",aa,bb);
+
+scanf("%s %s",cc,dd);
+
+scanf("%s %s",ee,ff);
+
+if(strcmp(bb,cc)==0 && strcmp(dd,ee)==0){
+
+    printf("%s %s",aa,bb);
+
+}
+
+if(strcmp(bb,ee)==0 && strcmp(ff,cc)==0){
+
+    printf("%s %s",aa,bb);
+
+}
+
+if(strcmp(ff,cc)==0 && strcmp(dd,aa)==0){
+
+    printf("%s %s",ee,ff);
+
+}
+
+if(strcmp(ff,aa)==0 && strcmp(bb,cc)==0){
+
+    printf("%s %s",ee,ff);
+
+}
+
+if(strcmp(dd,aa)==0 && strcmp(bb,ee)==0){
+
+    printf("%s %s",cc,dd);
+
+}
+
+if(strcmp(dd,ee)==0 && strcmp(ff,aa)==0){
+
+    printf("%s %s",cc,dd);
+
+}
+
+}
