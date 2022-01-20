@@ -1,0 +1,55 @@
+An array of N positive integers are passed as input. d which is a positive integer is also  passed as the input. the program must print the elements in the array which are divisible by D.
+
+
+Input:
+
+6
+
+10 20 30 40 50 60
+
+
+Output:
+
+20 40 60
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf("%d",&N);
+
+int array[N];
+
+for(int i = 0 ; i < N ; i++){
+
+    scanf("%d",&array[i]);
+
+}
+
+int N2;
+
+scanf("%d",&N2);
+
+for(int i = 0 ; i<N ; i++){
+
+    if( array[i] % N2 == 0 ){
+
+        printf("%d ",array[i]);
+
+    }
+
+}
+
+}
+
