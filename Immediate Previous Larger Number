@@ -1,0 +1,70 @@
+N numbers are passed as input to the program. The program must print the immediate previous larger number. If there is no such larger number print 0 for that specific number.
+
+
+Input:
+
+11
+
+455 346 76 304 488 374 385 433 350 9 1000
+
+
+Output:
+
+0 455 346 346 0 488 488 488 433 350 0
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf("%d", &N);
+
+int array[N];
+
+for(int i = 0; i < N; i++){
+
+    scanf("%d", &array[i]);
+
+}
+
+
+for(int i = 0; i < N; i++){
+
+    int flag = 0;
+
+    int temp = array[i];
+
+    for(int j = i ; j >= 0; j--){
+
+        if( array[j] > temp ) {
+
+            printf("%d ", array[j]);
+
+            flag = 1;
+
+            break;
+
+        }
+
+    }
+
+    if(flag == 0){
+
+        printf("0 ");
+
+    }
+
+}
+
+}
+
