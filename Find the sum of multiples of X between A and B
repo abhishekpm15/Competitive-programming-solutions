@@ -1,0 +1,48 @@
+Given the values for X, A and B, the program must print the sum of X from A to B(inclusive of A and B).
+
+
+Input:
+
+5
+
+10
+
+25
+
+
+Output:
+
+70
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int X, A, B;
+
+int sum=0;
+
+scanf("%d %d %d", &X, &A, &B);
+
+for(int i = A; i<=B ; i++){
+
+    if( i % X== 0){
+
+        sum += i;
+
+    }
+
+}
+
+printf("%d", sum);
+
+}
