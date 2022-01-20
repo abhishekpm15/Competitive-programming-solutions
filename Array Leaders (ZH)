@@ -1,0 +1,67 @@
+An array of N is passed as input. The program must print all the LEADERS in the array. A number is a LEADER if it greater than all the number to its right.
+
+
+input:
+
+10 17 4 3 5 2
+
+output:
+
+17 5 2
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int main()
+
+{
+
+int array[10001];
+
+int i=0;
+
+int num;
+
+while(scanf("%d",&num)==1)
+
+{
+
+array[i++]=num;
+
+}
+
+for(int k=0;k<i;k++)
+
+{
+
+int num2=array[k];
+
+int count=0;
+
+for(int j=k+1;j<i;j++)
+
+{
+if(num2 <= array[j])
+
+{
+
+count=1;
+
+break;
+
+}
+
+}
+
+if(count==0){
+
+printf("%d ",num2);
+
+}
+
+}
+
+}
+
