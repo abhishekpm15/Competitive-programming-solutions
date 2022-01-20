@@ -1,0 +1,72 @@
+Given a string S1 as the input, the program must reverse the string, keeping the vowels in the same position .
+
+
+Input:
+
+abhcezjqu
+
+
+Output:
+
+aqjzechbu
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<string.h>
+
+
+int main()
+
+{
+
+char string[1001];
+
+scanf("%s",string);
+
+int start=0;
+
+int end=strlen(string)-1;
+
+while(start<end){
+
+    if(string[start]=='a'||string[start]=='e'||string[start]=='i'||string[start]=='o'||string[start]=='u' || string[start]=='A' ||string[start]=='E'||string[start]=='I'||string[start]=='O'||string[start]=='U'){
+
+        start++;
+
+    }
+
+    else{
+
+        if(string[end]=='a'||string[end]=='e'||string[end]=='i'||string[end]=='o'||string[end]=='u'||string[end]=='A'||string[end]=='E'||string[end]=='I'||string[end]=='O'||string[end]=='U')
+
+        end--;
+
+
+       else{
+
+           char ch=string[start];
+
+           string[start]=string[end];
+
+           string[end]=ch;
+
+           start++;
+
+           end--;
+
+       }
+
+}
+
+}
+
+printf("%s",string);
+
+}
+
