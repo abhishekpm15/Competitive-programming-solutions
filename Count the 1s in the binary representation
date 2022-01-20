@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main(){
+
+long long num;
+
+scanf("%lld",&num);
+
+long long count=0;
+
+while(num>0){
+
+if(num%2==1){
+
+count++;
+
+}
+
+num/=2;
+
+}
+
+printf("%lld",count);
+
+}
