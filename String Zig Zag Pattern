@@ -1,0 +1,110 @@
+Given a string S and an integer N as the input, the program must split the string into groups whose size is N and print them as the output in separate lines in a zig zag manner. If the last group size is less than N then the remaining letters must be filled with asterisk as shown in the Example Input/Output.
+
+
+Input:
+
+ENVIRONMENT
+
+3
+
+
+Output:
+
+ENV
+
+ORI
+
+NME
+
+*TN
+
+
+CODE:
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<string.h>
+
+
+int main()
+
+{
+
+char aa[1001];
+
+scanf("%s",aa);
+
+int ab;
+
+scanf("%d",&ab);
+
+int rem=strlen(aa)%ab;
+
+int len=strlen(aa);
+
+int i;
+
+if(rem!=0){
+
+    for(i=0;i<=ab-rem;i++){
+
+        aa[len+i]='*';
+
+    }
+
+ }
+
+int tot=strlen(aa);//len+i-1;
+
+int j=0;
+
+int k;
+
+int siz=(strlen(aa)/ab) + strlen(aa)%ab;
+
+printf("\n");
+
+for(int i=0;i<siz;i++){
+
+    for(j;j<tot;j++){
+
+        if(i%2==0){
+
+            for(k=j;k<j+ab;k++){
+
+                printf("%c",aa[k]);
+
+            }
+
+            printf("\n");
+
+            j=k-1;
+
+            break;
+
+        }
+
+        else{
+
+            for(k=j+ab;k>j;k--){
+
+                printf("%c",aa[k]);
+
+            }
+
+            printf("\n");
+
+            j=(i*(j+ab))+1;
+
+            break;
+
+        }
+
+    }
+
+}
+
+}
