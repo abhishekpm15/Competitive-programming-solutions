@@ -1,0 +1,70 @@
+Given R x C matrix (R- rows and C- columns), print the sum of the values in each row as the output.
+
+
+Input:
+
+4 4
+
+1 2 3 4
+
+5 6 7 8
+
+9 10 11 12
+
+13 14 15 16
+
+
+Output:
+
+10
+
+26
+
+42
+
+58
+
+
+CODE :
+
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+
+int main()
+
+{
+
+int R,C;
+
+scanf("%d %d", &R, &C);
+
+int array[R][C];
+
+for(int i = 0; i<R; i++){
+
+    for(int j = 0; j<C ; j++){
+
+        scanf("%d", &array[i][j]);
+
+    }
+
+}
+
+for(int i = 0; i < R; i++){
+
+    int sum = 0;
+
+    for(int j = 0; j < C ; j++){
+
+        sum += array[i][j];
+
+    }
+
+printf("%d\n", sum);
+
+}
+
+}
