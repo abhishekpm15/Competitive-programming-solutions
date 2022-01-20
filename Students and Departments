@@ -1,0 +1,76 @@
+Given N students name and departments, print the X students belonging to a specific department D.
+
+
+Input:
+
+5
+
+Arun EEE
+
+Bhuvana ECE
+
+Ganesh MECH
+
+Pavithra ECE
+
+Rohit CSE
+
+ECE
+
+
+Output:
+Bhuvana 
+
+Pavithra
+
+
+CODE:
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<string.h>
+
+
+int main()
+
+{
+
+int N;
+
+scanf( "%d" , &N);
+
+char array[N][100], array2[N][100];
+
+char array3[N][100];
+
+for(int i = 0 ; i < N; i++){
+
+    scanf("%s %s", array[i] ,array2[i] );
+
+}
+
+char dept[10];
+
+int k=0;
+
+scanf("%s", dept);
+
+for(int i = 0; i < N; i++){
+
+    if(strcmp(array2[i], dept) == 0){
+
+        strcpy(array3[k++], array[i]);
+
+    }
+
+}
+
+for(int i = 0 ;i < k; i++){
+
+    printf("%s\n",array3[i]);
+
+}
+
+}
