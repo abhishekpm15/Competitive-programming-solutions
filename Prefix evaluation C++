@@ -1,0 +1,60 @@
+Input:
++ - 2 3 / 60 * 5 6
+
+Output:
+1
+
+Input:
++ - 5 2 + / 21 3 * 7 5
+
+Output:
+45
+
+CODE:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+string a;
+getline(cin,a);
+stack<int> st;
+for(int i=a.length()-1;i>=0;i--){
+    if(a[i] == ' ')
+    continue;
+    if(isdigit(a[i])){
+        string str2;
+        while(i>=0 && isdigit(a[i])){
+            str2 += a[i];
+            i--;
+        }
+        reverse(str2.begin(),str2.end());
+        int num2 = stoi(str2);
+        st.push(num2);
+    }
+    else{
+        int temp = st.top();
+        st.pop();
+        int temp2 = st.top();
+        st.pop();
+        switch(a[i]){
+            case '+':
+                st.push(temp+temp2);
+                break;
+            case '-':
+                st.push(temp-temp2);
+                break;
+            case '*':
+                st.push(temp*temp2);
+                break;
+            case '/':
+                st.push(temp/temp2);
+                break;
+        }
+    }
+}
+cout<<st.top();
+
+
+}
